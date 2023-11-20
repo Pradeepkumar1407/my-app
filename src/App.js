@@ -1,24 +1,37 @@
-import logo from './logo.svg';
 import './App.css';
 
+// Appp component=view+ logic(Declaration)
 function App() {
+  const users = [
+    {
+      name: "Pradeep",
+      pic: "https://wallpapers.com/naruto"
+    },
+    {
+      name: "srinath",
+      pic: "https://wallpapers.com/naruto"
+    },
+
+    {
+      name: "Balaji",
+      pic: "https://wallpapers.com/naruto"
+    }
+  ];
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {users.map((usr) => (<User name={usr.name} pic={usr.pic} />
+      )
+      )
+      }
     </div>
+  );
+}
+function User(props) {
+  return (
+    <section>
+      <img src={props.pic} alt={props.name} />
+      <h1>Hello <span>{props.name}</span>.😂😂😂</h1>;
+    </section>
   );
 }
 
